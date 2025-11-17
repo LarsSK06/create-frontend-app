@@ -20,10 +20,6 @@ const cwd = process.cwd();
     {
         console.log("\t- 🔃 Generating Next.js app...");
     
-        const emitter = degit("LarsSK06/frontend-template");
-    
-        await emitter.clone(tempFolderPath);
-    
         execSync("npx create-next-app . --yes --empty --skip-install");
     
         console.log("\t  ✅ Generated Next.js app!\n");
@@ -32,13 +28,12 @@ const cwd = process.cwd();
 
     {
         console.log("\t- 🔃 Cloning files from template...");
+
+        const emitter = degit("LarsSK06/create-frontend-app/template");
     
-        for (const objName of [
-            "src",
-            "public",
-            "postcss.config.mjs",
-            "next.config.ts"
-        ]) {
+        await emitter.clone(tempFolderPath);
+    
+        for (const objName of fs.readdirSync(tempFolderPath)) {
             const absoluteCwdPath = path.join(cwd, objName);
             const absoluteTempFolderPath = path.join(tempFolderPath, objName);
             
