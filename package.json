@@ -1,6 +1,6 @@
 {
     "name": "@kvihaugen/create-frontend-app",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "main": "dist/index.js",
     "type": "module",
     "bin": {
@@ -27,5 +27,8 @@
     "repository": {
         "url": "https://github.com/LarsSK06/create-frontend-app",
         "type": "git"
-    }
+    },
+    "files": [
+        "dist"
+    ]
 }
