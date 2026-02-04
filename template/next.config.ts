@@ -1,21 +1,18 @@
-import policy from "@/utils/csp-policy";
+import cspPolicy from "@/utils/csp-policy";
 
 import { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-    async headers() {
-        return [
-            {
-                source: "/(.*)",
-                headers: [
-                    {
-                        key: "Content-Security-Policy",
-                        value: policy
-                    }
-                ]
-            }
-        ];
-    }
-};
+function nextConfig(): NextConfig {
+    return {
+        reactCompiler: true,
+        headers: () => [{
+            source: "/(.*)",
+            headers: [{
+                key: "Content-Security-Policy",
+                value: cspPolicy
+            }]
+        }]
+    };
+}
 
 export default nextConfig;

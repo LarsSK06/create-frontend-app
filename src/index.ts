@@ -20,7 +20,7 @@ const cwd = process.cwd();
     {
         console.log("\t- 🔃 Generating Next.js app...");
     
-        execSync("npx create-next-app . --yes --empty --skip-install");
+        execSync("npx create-next-app . --yes --empty --skip-install --src-dir");
     
         console.log("\t  ✅ Generated Next.js app!\n");
     }
