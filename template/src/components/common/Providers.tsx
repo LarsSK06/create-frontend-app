@@ -9,7 +9,7 @@ import "@/utils/i18n";
 const theme = createTheme({});
 
 const Providers = ({ children }: ParentProps) => (
-    <MantineProvider theme={theme}>
+    <MantineProvider theme={theme} defaultColorScheme="auto">
         {children}
     </MantineProvider>
 );

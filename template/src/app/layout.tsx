@@ -74,7 +74,7 @@ export const metadata = {
 const RootLayout = ({ children }: ParentProps) => (
     <html {...mantineHtmlProps}>
         <head>
-            <ColorSchemeScript />
+            <ColorSchemeScript defaultColorScheme="auto" />
         </head>
         <body className="antialiased">
             <Providers>
