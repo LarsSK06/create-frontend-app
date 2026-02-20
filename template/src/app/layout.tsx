@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { ColorSchemeScript, mantineHtmlProps } from "@mantine/core";
 
 import ParentProps from "@/types/common/ParentProps";
-import Providers from "@/components/common/Providers";
+import Providers from "@/components/common/other/Providers";
 
 import "@/css/globals.css";
 
