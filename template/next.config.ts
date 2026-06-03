@@ -1,6 +1,5 @@
-import cspPolicy from "@/utils/csp-policy";
-
 import { NextConfig } from "next";
+import CONTENT_SECURITY_POLICY_CONFIG from "./src/configs/content-security-policy.config";
 
 function nextConfig(): NextConfig {
     return {
@@ -9,7 +8,7 @@ function nextConfig(): NextConfig {
             source: "/(.*)",
             headers: [{
                 key: "Content-Security-Policy",
-                value: cspPolicy
+                value: CONTENT_SECURITY_POLICY_CONFIG
             }]
         }]
     };

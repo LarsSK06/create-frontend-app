@@ -1,14 +1,12 @@
-"use client";
-
 import { Button } from "@mantine/core";
 import { t } from "i18next";
 
-const Page = () => {
+function Page() {
     return (
         <Button>
-            {t("common.HelloWorld")}
+            {t("common.helloWorld")}
         </Button>
     );
-};
+}
 
 export default Page;

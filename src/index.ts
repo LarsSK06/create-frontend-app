@@ -84,7 +84,9 @@ const cwd = process.cwd();
         console.log("\t- 🔃 Deleting unnecessary files...");
     
         for (const objName of [
-            "README.md"
+            "README.md",
+            "CLAUDE.md",
+            "AGENTS.md"
         ]) {
             const absolutePath = path.join(cwd, objName);
     
@@ -109,7 +111,10 @@ const cwd = process.cwd();
             "@mantine/hooks",
             "@tabler/icons-react",
             "i18next",
-            "react-i18next"
+            "react-i18next",
+            "luxon",
+            "zod",
+            "axios"
         ];
 
         execSync(`npm i ${packageNames.join(" ")}`);

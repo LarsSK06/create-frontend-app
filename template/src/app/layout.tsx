@@ -1,15 +1,14 @@
 import { Metadata } from "next";
-import { ColorSchemeScript, mantineHtmlProps } from "@mantine/core";
-
+import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from "@mantine/core";
 import ParentProps from "@/types/common/ParentProps";
-import Providers from "@/components/common/other/Providers";
-
 import "@/css/globals.css";
+import MANTINE_UI_CONFIG from "@/configs/mantine-ui.config";
+import "@/setups/i18n.setup";
 
 // https://seostudio.tools/meta-tag-generator
 // https://www.searchenginejournal.com/important-tags-seo/156440/
 
-export const metadata = {
+export const metadata: Metadata = {
     title: "Frontend template",
     description: "My preferred template for frontend projects - tailored to my needs",
     applicationName: "Frontend template",
@@ -69,19 +68,22 @@ export const metadata = {
         url: "https://frontend-template.kvihaugen.no"
     },
     metadataBase: new URL("https://frontend-template.kvihaugen.no")
-} satisfies Metadata as Metadata;
+};
 
-const RootLayout = ({ children }: ParentProps) => (
-    <html {...mantineHtmlProps}>
-        <head>
-            <ColorSchemeScript defaultColorScheme="auto" />
-        </head>
-        <body className="antialiased">
-            <Providers>
-                {children}
-            </Providers>
-        </body>
-    </html>
-);
+function RootLayout({ children }: ParentProps) {
+    return (
+        <html {...mantineHtmlProps}>
+            <head>
+                <ColorSchemeScript defaultColorScheme="auto"/>
+            </head>
+
+            <body className="antialiased">
+                <MantineProvider theme={MANTINE_UI_CONFIG}>
+                    {children}
+                </MantineProvider>
+            </body>
+        </html>
+    );
+}
 
 export default RootLayout;

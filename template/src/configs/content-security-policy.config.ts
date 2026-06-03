@@ -1,7 +1,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#fetch_directives
 // https://www.validbot.com/tools/csp-wizard.php
 
-const policy = `
+const CONTENT_SECURITY_POLICY_CONFIG = `
 
 default-src 'self';
 script-src 'self' 'unsafe-inline' 'unsafe-eval';
@@ -12,4 +12,4 @@ frame-src;
 
 `.replaceAll("\n", " ").trim();
 
-export default policy;
+export default CONTENT_SECURITY_POLICY_CONFIG;
